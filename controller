@@ -1,0 +1,12 @@
+({
+    doInit : function(component){
+      var action = component.get("c.method1");
+        action.setCallback(this,function(response)
+                           {
+                               var res = response.getReturnValue();
+                               console.log(JSON.stringify(res));
+                               component.set("v.recordList",res);
+                           });
+        $A.enqueueAction(action);
+    }
+})
