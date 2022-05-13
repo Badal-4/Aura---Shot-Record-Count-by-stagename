@@ -1,0 +1,11 @@
+public class TestCtrl {
+
+  @AuraEnabled()
+    public static List<AggregateResult> method1() 
+    {
+       List<AggregateResult> result = new List<AggregateResult>();
+       result = [select stagename,count(Id) total from Opportunity group by stagename]; 
+       return result;        
+    }
+
+}
