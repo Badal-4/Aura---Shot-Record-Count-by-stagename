@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global" 
+                controller="TestCtrl">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" /> 
+    <aura:attribute name="recordList" type="List"/>
+   <aura:iteration items="{!v.recordList}" var="rec">
+    <p>Stagename : {!rec.StageName}</p>
+       <p>Count : {!rec.total}</p>
+    </aura:iteration>
+</aura:component>
